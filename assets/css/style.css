@@ -1,0 +1,217 @@
+/* Estilos globales */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilos para la barra de navegación */
+nav {
+  grid-area: nav;
+  background-color: #005187;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  color: #fff;
+}
+
+nav h1 {
+  padding: 10px;
+}
+
+nav ul {
+  font-size: large;
+  padding: 10px 20px;
+  list-style: none;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+nav ul li a:hover {
+  color: #000062;
+  transition: 0.2s;
+}
+/* Estilos para el contenido principal */
+main {
+  grid-area: main;
+  background-color: whitesmoke;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  padding: 0 30px;
+}
+
+main .item {
+  
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  border: 1px solid #000062;
+  transition: box-shadow 0.2s ease-in-out;
+}
+main .item:hover{
+  transform: scale(1.08);
+transition: 1.5s; 
+box-shadow: 0 0 40px  #000062 inset; }
+main .item img {
+  max-width: 100%;
+  height: 450px;
+  
+}
+
+main .item p {
+  font-size: large ;
+  color: black;
+}
+
+main button {
+  background-color: #005187;
+  color: white;
+  padding: 10px;
+  border: 0;
+  cursor: pointer;
+}
+main button:hover{
+  background-color: green;
+}
+/* Estilos para el menú de ordenar */
+menu {
+  grid-area: menu;
+  background-color: #dcdcdc;
+  text-align: center;
+}
+
+menu select {
+  width: 95%;
+  padding: .5%;
+}
+
+menu h3 {
+  margin-top: .9%;
+  font-size: medium;
+  text-align: center;
+}
+
+/* Estilos para el pie de página */
+footer {
+  grid-area: footer;
+  background-color: #000062;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-bottom: 0;
+}
+
+/* Estilos para la paginación */
+.pag {
+  background-color: whitesmoke;
+  grid-area: pag;
+  color: black;
+  padding: 10px;
+}
+
+.pag ul {
+  
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+
+.pag ul li a {
+  
+  text-decoration: none;
+  color: #003785;
+  border: 1px solid gray;
+  padding: 8px;
+}
+.pag ul li a:hover{
+  background-color: #005187 ;
+  transition: 1.2s;
+}
+.mobile-toggle-container {
+  display: none;
+}
+/* Estilos para dispositivos móviles */
+@media (max-width: 576px) {
+  nav #menu-icon {
+    font-size: 30px;
+    cursor: pointer;
+    display: block;
+  }
+  
+  .mobile-toggle-container {
+    display: block;
+    text-align: right;
+    padding: 10px;
+  }
+
+  .mobile-toggle {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+  }
+
+  .mobile-toggle span {
+    display: block;
+    width: 30px;
+    height: 4px;
+    background-color: #fff;
+    margin: 5px 0;
+    transition: 0.4s;
+  }
+
+  /* Estilos para el menú de navegación en dispositivos móviles */
+  nav ul {
+    display: none;
+  }
+
+  nav ul.active {
+    display: flex;
+    flex-direction: column;
+    background-color: #005187;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+  }
+
+  nav ul.active li {
+    text-align: center;
+    padding: 10px;
+  }
+  main .item:hover{
+    transform: scale(0.8);
+  transition: 1.5s;  }
+  .grid-container {
+    display: grid;
+    grid-template-areas:
+      "nav"
+      "menu"
+      "main"
+      "footer";
+    grid-template-columns: 100%;
+  }
+}
+
+@media (min-width: 576px) {
+  main .grid-layout {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    justify-content: flex-start;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    gap: 20px;
+  }
+  .grid-container {
+    display: grid;
+    grid-template-areas:
+      "nav menu"
+      "nav main"
+      "footer main";
+    grid-template-columns: 12% 88%;
+  }
+}
